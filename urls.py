@@ -19,11 +19,34 @@ from .apiviews import ProductList, ProductDetail, CategoryList, CategoryDetail, 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # get all products
     path('api/v1/products/', ProductList.as_view(), name='products_list'),
+    # get only one product
     path('api/v1/products/<int:pk>', ProductDetail.as_view(), name='product_detail'),
+    # get all categories
     path('api/v1/categories/', CategoryList.as_view(), name='categories_list'),
+    #get category by id
     path('api/v1/categories/<int:pk>', CategoryDetail.as_view(), name='category_detail'),
+    # get subcategories by id
     path('api/v1/subcategories/<int:pk>', SubCategoryDetail.as_view(), name='subcategory_detail'),
-    path('api/v1/categories/<int:pk>/subcategories/', SubCategoryList.as_view(), name='category_list'),
+    # get relational cateogories by subcategories
+    path('api/v1/categories/<int:pk>/subcategories/', SubCategoryList.as_view(), name='category_list')
 
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
