@@ -31,7 +31,7 @@ urlpatterns = [
     path('api/v1/subcategories/<int:pk>', SubCategoryDetail.as_view(), name='subcategory_detail'),
     # get relational cateogories by subcategories
     path('api/v1/categories/<int:pk>/subcategories/', SubCategoryList.as_view(), name='category_list')
-    # here we need add more endpoints 
+    # here we need add more endpoints for usage
 
 ]
 
